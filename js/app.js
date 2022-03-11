@@ -146,6 +146,9 @@ const showPosts = posts => {
 const displayLikedPosts = () => {
   const productsContainer = document.getElementById("liked");
   productsContainer.innerHTML = "";
+  const h1 = document.createElement('h1');
+  h1.innerHTML = `<h1>Liked posts</h1>`;
+  document.getElementById("liked").appendChild(h1);
   const likedPosts = getLikedPosts();
   likedPosts.forEach((post) => {
     const div = createPost(post);
