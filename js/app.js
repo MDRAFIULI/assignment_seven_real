@@ -158,8 +158,10 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
   document.getElementById('reported').innerHTML = '';
+  const h1 = document.createElement('h1');
+  h1.innerHTML = `<h1>Reported posts</h1>`;
+  document.getElementById("reported").appendChild(h1);
   const reportedPosts = getReportedPosts();
-  console.log(reportedPosts);
   reportedPosts.forEach((post) => {
     const div = createPost(post);
     document.getElementById("reported").appendChild(div);
@@ -173,9 +175,3 @@ const loadPosts = async () => {
 }
 
 loadPosts();
-/* const loadPosts = () => {
-  fetch('../data/posts.json')
-    .then(res => res.json())
-    .then(data => showPosts(data))
-}
-loadPosts(); */
